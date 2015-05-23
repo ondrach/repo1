@@ -54,10 +54,10 @@ void ADE_SPIInit(void)
 
     uint16_t Data;
     Data = 13;
-    GPIO_ResetBits(GPIOA, GPIO_Pin_4);
-    SPI_I2S_SendData( SPI1, Data);
+ //   GPIO_ResetBits(GPIOA, GPIO_Pin_4);
+ //   SPI_I2S_SendData( SPI1, Data);
  //   while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET);
-    GPIO_SetBits(GPIOA, GPIO_Pin_4);
+ //   GPIO_SetBits(GPIOA, GPIO_Pin_4);
 
 }
 
@@ -69,17 +69,19 @@ void ADE_SPISel(void)
 //	SPI_SSOutputCmd(SPI1, ENABLE);
 
 	int i;
-	for(i = 0; i<=3; i++){
+	for(i = 0; i<=2; i++){
 
-		//GPIO_ResetBits(GPIOA, GPIO_Pin_4);
+		GPIO_ResetBits(GPIOA, GPIO_Pin_4);
 //		SPI_NSSInternalSoftwareConfig(SPI1, SPI_NSSInternalSoft_Set);
 
 			uint16_t Data;
 			Data = i;
+			while (SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_TXE) == RESET);
 			SPI_I2S_SendData( SPI1, Data);
-			while (SPI_I2S_GetFlagStatus(SPI2, SPI_I2S_FLAG_RXNE) == RESET);
+
 //			SPI_SSOutputCmd(SPI1, DISABLE);
-//			GPIO_SetBits(GPIOA, GPIO_Pin_4);
+			while (SPI_I2S_GetFlagStatus(SPI1, SPI_I2S_FLAG_TXE) == RESET);
+ 		GPIO_SetBits(GPIOA, GPIO_Pin_4);
 	}
 
 	//toggled high to low three times after reset

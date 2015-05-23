@@ -23,7 +23,7 @@ void RCC_Configuration(void);
 
 //void SPI_Exp(void);
 
-ErrorStatus HSEStartUpStatus;
+
 
 
 
@@ -36,21 +36,14 @@ int main(void)
 //	ST7735_init();
 
 
-	RCC_Configuration();
+	RCC_Configuration();	//Enables clock for all used peripherials
 
 
-//	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_GPIOB | RCC_APB2Periph_GPIOC | RCC_APB2Periph_SPI1, ENABLE);
-//	RCC_APB1PeriphClockCmd(RCC_APB1Periph_SPI2, ENABLE);
-
-
-	GPIO_InitTypeDef GPIO_InitStructure;
+	GPIO_InitTypeDef GPIO_InitStructure;		//LED blue
 	GPIO_StructInit(&GPIO_InitStructure);
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_15;
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_10MHz;
-	GPIO_Init(GPIOB, &GPIO_InitStructure);
-
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8;
 	GPIO_Init(GPIOC, &GPIO_InitStructure);
 
 
@@ -89,6 +82,8 @@ int main(void)
 
 void RCC_Configuration(void)
 {
+	ErrorStatus HSEStartUpStatus;
+
     /* RCC system reset(for debug purpose) */
     RCC_DeInit();
 
