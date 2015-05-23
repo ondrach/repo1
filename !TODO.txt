@@ -1,0 +1,6 @@
+Zjistit, jestli problem z SPI neni v tom, ze po inicializaci SPI - SPIInit probihala jeste inicializace ST7735, ktera mohla prepsat nastaveni.
+
+Vyzkouset pouze priklad SPI loopback. V priklade nejprve volat proceduru 
+
+Procedura RCC_configuration - zjistit, zda jsou hodiny pro SPI spravne nastaveny.
+

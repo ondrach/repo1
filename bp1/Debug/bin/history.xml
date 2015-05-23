@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="4.7.2 -mcpu=cortex-m3 -mthumb -g -nostartfiles -Map=bp1.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\bp1 -TC:\CooCox\CoIDE\configuration\ProgramData\bp1/link.ld -g">
+      <target file="bp1.elf" lastModified="14d7fb53ce1">
+         <source file="..\obj\spi.o" lastModified="14d67c2ebd2"/>
+         <source file="..\obj\stm32f10x_tim.o" lastModified="14d67c2ed48"/>
+         <source file="..\obj\startup_stm32f10x_md_vl.o" lastModified="14d67c2edf3"/>
+         <source file="..\obj\core_cm3.o" lastModified="14d67c2eeb5"/>
+         <source file="..\obj\system_stm32f10x.o" lastModified="14d67c2ef78"/>
+         <source file="..\obj\uart.o" lastModified="14d67c2f044"/>
+         <source file="..\obj\stm32f10x_gpio.o" lastModified="14d67c2f12e"/>
+         <source file="..\obj\ST7735.o" lastModified="14d67c2f35b"/>
+         <source file="..\obj\main.o" lastModified="14d784a1186"/>
+         <source file="..\obj\ade7880.o" lastModified="14d7fb539a6"/>
+         <source file="..\obj\printf.o" lastModified="14d67c2f611"/>
+         <source file="..\obj\stm32f10x_rcc.o" lastModified="14d67c2f718"/>
+         <source file="..\obj\stm32f10x_exti.o" lastModified="14d67c2f7f5"/>
+         <source file="..\obj\xprintf.o" lastModified="14d67c2f8cd"/>
+         <source file="..\obj\stm32f10x_usart.o" lastModified="14d67c2f9c5"/>
+         <source file="..\obj\syscalls.o" lastModified="14d67c2fac1"/>
+         <source file="..\obj\glcdfont.o" lastModified="14d67c2fb6f"/>
+         <source file="..\obj\misc.o" lastModified="14d67c2fc40"/>
+         <source file="..\obj\stm32f10x_spi.o" lastModified="14d67c2fd30"/>
+         <source file="..\obj\stm32f10x_i2c.o" lastModified="14d67c2fe30"/>
+      </target>
+   </processor>
+</history>
